@@ -52,14 +52,14 @@ class Card extends React.Component {
         let bg_color = (this.props.viewMode == 'DAY_MODE' ) ? hue.light : hue.dark;
         const val = StyleSheet.create({
               card : {
-                width : 150,
+                width : 85,
                 padding: 5,
                 marginRight: 5,
                 marginLeft: 5,
                 marginTop:13,
                 marginBottom: 13,
-                backgroundColor : bg_color,
-                opacity: .9,
+                backgroundColor : 'transparent',
+                opacity: .3,
                 shadowOffset : {width: 6, height: 10},
                 shadowColor : hue.dark,
                 shadowRadius : 20,
