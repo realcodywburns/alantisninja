@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: atlantis.ninja 
+Token: bda016199908930ea1751fadc274a9b21608f65ea3c48e651f78a44dbca03afb
