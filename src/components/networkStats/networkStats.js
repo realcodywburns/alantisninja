@@ -7,62 +7,109 @@ import {
   } from 'react-360';
 import {Clam, CardContainer} from '../index.js';
 
+import config from '../../helpers/config';
+
 class NetworkStats extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
             hover: false, 
+            testnet: [],
+            mainnet: [],
+            nodes: config.config,
+            intervalIsSet: false,
         };
       }
          
-    componentWillUnmount() {
-        if (this.animationFrame) {
-            window.cancelAnimationFrame(this.animationFrame);
+    componentDidMount(){        
+      this.getForks();
+      if(!this.state.intervalIsSet) {
+        let interval = setInterval(this.getForks(),5000);
+        this.setState({ intervalIsSet : interval})
         }
     }
- 
+
+    componentWillUnmount() {
+        if(this.state.intervalIsSet){
+          clearInterval(this.state.intervalIsSet);
+          this.setState({ intervalIsSet :false });
+        }
+    }
+    
+
+    async getForks(){
+      let test = [];
+      let main = [];
+      
+      for(let i=0; i < this.state.nodes.length; i++){
+        console.log('getForks');
+        console.log(this.state.nodes[i]);
+        //let nodeWithBlockNumber = await this.getblockNumbers(this.state.nodes[i]);
+        //console.log("nodewblocknumber")
+        //console.log(nodeWithBlockNumber);
+        (this.state.nodes[i].network === "Testnet")
+        ? test.push(this.state.nodes[i])
+        : main.push(this.state.nodes[i]);   
+      }
+      this.setState({testnet: test, mainnet: main});
+    }
+
+
+    async getblockNumbers(chain){
+      console.log("getblocknumber")
+      try {
+        //console.log("trying");
+        const response = await fetch(chain.api);
+        if(!response.ok){throw Error(response.statusText);}
+        const json = await response.json();          
+        chain.blocknumber = parseInt(json.result, 16);
+        //console.log(chain);
+        return chain; 
+      } catch (error) {
+        console.log(error);
+        return chain; 
+      }  
+    }
+
     render() {
+        const { mainnet, testnet } = this.state;
         return  (
             <View>
-            <Text style={
+              <Text style={
                 { textAlign:'center',
                  fontWeight: 'bold',
                  color:'green'}}>Network Status
-                 </Text>
-                <Text>Mainnet</Text>
-                <CardContainer>
-                <Clam>
-                  <Text>DFG:</Text>
-                  <Text>8,500,000</Text>
-                </Clam>
-                <Clam>
-                    <Text>Cowabunga:</Text>
-                    <Text>8,675,309</Text>
-                 </Clam>
-                <Clam>
-                  <Text>Community:</Text>
-                  <Text>8,750,000</Text>
-                </Clam>
-              </CardContainer>
-              <Text>Testnet</Text>
+              </Text>
+                 
+              <Text> Mainnet </Text>
               <CardContainer>
-                <Clam>
-                  <Text>Kotti</Text>
-                  <Text>716,617</Text>
-                </Clam>
-                <Clam>
-                  <Text>Astor</Text>
-                  <Text>unknown</Text>
-                </Clam>
-                <Clam>
-                  <Text>Morden</Text>
-                  <Text>4,729,274</Text>
-                </Clam>
-                <Clam>
-                  <Text>Kensington</Text>
-                  <Text>100</Text>
-                </Clam>
+                {
+                  mainnet.length <= 0 
+                  ? "Loading!"
+                  : mainnet.map(dat => (
+                        <Clam>
+                          <Text>{dat.name}</Text>
+                          <Text>Fork Block: {dat.forkBlock}</Text>
+                        </Clam>
+                      )
+                  )
+                }            
               </CardContainer>
+              <Text> Testnet </Text>
+              <CardContainer>
+                {
+                  testnet.length <= 0 
+                  ? "Loading!"
+                  : testnet.map(dat => (
+                        <Clam>
+                          <Text>{dat.name}</Text>
+                          <Text>{dat.forkBlock}</Text>
+                        </Clam>
+                      )
+                  )
+                }
+              </CardContainer>
+
             </View>
         )
     }
