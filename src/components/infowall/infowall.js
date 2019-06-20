@@ -25,15 +25,13 @@ class InfoWall extends React.Component {
         return  (
         <View style={this.styles().textbox}>
             <Text>
-            WTF!? 3 Fork blocks!?
+            Simple Summary
             </Text>
-            <Text style={{fontSize:12}}>Some of the development group think that the fork will be ready sooner and have over promised to their commmunity and are risking a network split fork of epic porportions (block 8,500,000 group). Block 8,750,000 was a compromise that had come from the community to avoid spliting the network, however, the 8,500,000 group seemingly are not backing down. Block 8,675,309 is a compromise to a compromise and I thought it would be a terrible oversight not to pay homage to the epic Tommy TuTone and his Jenny.</Text>
-            <Text>What should I do?</Text>
-            <Text style={{fontSize:12}}>Choose your own path! Since most of the major clients support eth and etc all that needs to be done is changing the block numbers to the proper configurations. This repo contains the updated config files for each client. Choose the fork least likely to break the network and follow the update instructions below.</Text>
-            <Text>Isn't this ridiculous?</Text>
-            <Text style={{fontSize:14}}>Yes, the ecip process is normally used to prevent this type of situation.
-                There is a chance all 3 will exist as a 3 way chain split all with minority hash rates; but that's showbiz, baby!
-            </Text>
+            <Text style={{fontSize:12}}>Enable the outstanding Ethereum Foundation Spurious Dragon and Byzantium network protocol upgrades on the Ethereum Classic network in a hard-fork code-named Atlantis to enable maximum compatibility across these networks.</Text>
+            <Text>Abstract</Text>
+            <Text style={{fontSize:12}}>Add support for a subset of protocol-impacting changes introduced in the Ethereum Foundation (ETH) network via the Spurious Dragon and Byzantium hardforks.</Text>
+            <Text>Motivation</Text>
+            <Text style={{fontSize:14}}>To enhance the Ethereum Virtual Machine's (EVM) capabilities, various opcodes and precompiled contracts shall be added to the Ethereum Classic networks, all of which have been in use on the Ethereum Foundation networks since late 2017. Adoption of the receipt status feature provides a helpful method for decentralized-application developers to access the successful or failed state of a contract. This would establish a higher level of interoperability between Foundation and Classic EVMs, and make a more extensive array of tooling available for the ETC network (e.g., Solidity version, contract debugging tools). The proposed change to the difficulty formula ensures that the difficulty adjustment algorithm targets a constant average rate of blocks produced including uncles, and so ensures a highly predictable issuance rate that cannot be manipulated upward by manipulating the uncle rate.</Text>
             <Text>Check back for live stat tracking!</Text>
        </View>
     )}

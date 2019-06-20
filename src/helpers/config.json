@@ -2,30 +2,8 @@
     "config":[ 
         {
   "network": "Mainnet",
-  "name": "DFG",
-  "forkBlock": 8500000,
-  "api": "https://etc-zs1y7u.blockscout.com/api?module=block&action=eth_block_number",
-  "infoSite":"",
-  "blocknumber" : "",
-  "active": false,
-  "image": "clam.png"
-},
-{
-  "network": "Mainnet",
-  "name": "Cowabunga",
-  "forkBlock": 8675309,
-  "infoSite": "",
-  "statsSite": "",
-  "blockExplorer": "",
-  "blocknumber" : "",
-  "api": "",
-  "active": false,
-  "image": "clam.png"
-},
-{
-  "network": "Mainnet",
-  "name": "Classic",
-  "forkBlock": 8750000,
+  "name": "",
+  "forkBlock": 8772000,
   "infoSite": "",
   "statsSite": "",
   "blockExplorer": "",
@@ -80,7 +58,7 @@
   "blocknumber" : "",
   "api":"",
   "active": false,
-  "image": "clam.png"
+  "image": "happyclam.png"
 }
     ]
 }
