@@ -87,7 +87,7 @@ class NetworkStats extends React.Component {
                   mainnet.length <= 0 
                   ? "Loading!"
                   : mainnet.map(dat => (
-                        <Clam>
+                        <Clam image={dat.image}>
                           <Text>{dat.name}</Text>
                           <Text>Fork Block: {dat.forkBlock}</Text>
                         </Clam>
@@ -101,7 +101,7 @@ class NetworkStats extends React.Component {
                   testnet.length <= 0 
                   ? "Loading!"
                   : testnet.map(dat => (
-                        <Clam>
+                        <Clam image={dat.image}>
                           <Text>{dat.name}</Text>
                           <Text>{dat.forkBlock}</Text>
                         </Clam>

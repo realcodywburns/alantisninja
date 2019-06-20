@@ -28,7 +28,7 @@ class Clam extends React.Component {
             <View  
               onEnter={() => this.setState({hover: true})}
               onExit={() => this.setState({hover: false})}>  
-                <Image style={this.styles().clam} source={asset('clam.png')} >
+                <Image style={this.styles().clam} source={asset(this.props.image)} >
                 {this.props.children}
                 </Image>
             </View>

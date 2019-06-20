@@ -7,7 +7,8 @@
   "api": "https://etc-zs1y7u.blockscout.com/api?module=block&action=eth_block_number",
   "infoSite":"",
   "blocknumber" : "",
-  "active": false
+  "active": false,
+  "image": "clam.png"
 },
 {
   "network": "Mainnet",
@@ -18,7 +19,8 @@
   "blockExplorer": "",
   "blocknumber" : "",
   "api": "",
-  "active": false
+  "active": false,
+  "image": "clam.png"
 },
 {
   "network": "Mainnet",
@@ -29,7 +31,8 @@
   "blockExplorer": "",
   "api":"",
   "blocknumber" : "",
-  "active": false
+  "active": false,
+  "image": "clam.png"
 },
 {
   "network": "Testnet",
@@ -40,7 +43,8 @@
   "blockExplorer": "https://kottiexplorer.ethernode.io/api?module=block&action=eth_block_number",
   "blocknumber" : "",
   "api":"",
-  "active": false
+  "active": false,
+  "image": "happyclam.png"
 },
 {
   "network": "Testnet",
@@ -51,7 +55,8 @@
   "blockExplorer": "https://explore.astor.host",
   "blocknumber" : "",
   "api":"",
-  "active": false
+  "active": false,
+  "image": "clam.png"
 },
 {
   "network": "Testnet",
@@ -62,7 +67,8 @@
   "blockExplorer": "",
   "blocknumber" : "",
   "api":"",
-  "active": false
+  "active": false,
+  "image": "clam.png"
 },
 {
   "network": "Testnet",
@@ -73,7 +79,8 @@
   "blockExplorer": "",
   "blocknumber" : "",
   "api":"",
-  "active": false
+  "active": false,
+  "image": "clam.png"
 }
     ]
 }
