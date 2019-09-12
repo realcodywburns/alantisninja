@@ -45,7 +45,7 @@
   "blockExplorer": "",
   "blocknumber" : "",
   "api":"",
-  "active": false,
+  "active": true,
   "image": "clam.png"
 },
 {
@@ -57,7 +57,7 @@
   "blockExplorer": "",
   "blocknumber" : "",
   "api":"",
-  "active": false,
+  "active": true,
   "image": "happyclam.png"
 }
     ]
